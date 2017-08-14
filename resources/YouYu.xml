@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="TestSuite" parallel="false">
+	<listeners>
+		<listener class-name="com.youyu.automation.mobile.listener.FailureScreenshotsListener"></listener>
+		<listener class-name="com.youyu.automation.mobile.listener.MyEmailableReportListener"></listener>
+	</listeners>
+	<parameter name="url" value="127.0.0.1"/>
+	<parameter name="port" value="4727"/>
+	<parameter name="app" value="${TestApp}"/>
+	<parameter name="device" value="${TestPlatform}"/>
+	<parameter name="udid" value="${TestDevice}"/>
+	<parameter name="env" value="${TestEnv}"/>
+	<parameter name="test_job" value="${TestJobId}"/>
+	<parameter name="app_address" value="${TestAppAddress}" />
+	<parameter name="method" value="online"/>
+	<parameter name="test_execute_id" value="${TestExecuteId}"/>
+	<test name="testCase">
+		<classes>
+			<class name="com.youyu.automation.mobile.testcase.AutoTestCase">
+				<methods>
+					<include name="runTestCase"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+</suite>

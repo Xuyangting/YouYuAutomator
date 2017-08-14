@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="TestSuite" parallel="false">
+	<listeners>
+		<listener class-name="com.youyu.automation.mobile.listener.FailureScreenshotsListener"></listener>
+		<listener class-name="com.youyu.automation.mobile.listener.MyEmailableReportListener"></listener>
+	</listeners>
+	<parameter name="url" value="127.0.0.1" />
+	<parameter name="port" value="4727" />
+	<parameter name="app" value="stock" />
+	<parameter name="device" value="android" />
+	<parameter name="udid" value="5LM0216111012735"/>
+	<parameter name="env" value="qa" />
+	<parameter name="test_job" value="1"/>
+	<parameter name="app_address" value="http://10.9.16.12/apks/majikwealth/android/app/beta/majikWealth_v2.0.0(Build_385)_official_20170505_1905.apk" />
+	<parameter name="method" value="debug"/>
+	<parameter name="test_execute_id" value="0"/>
+	<test name="testCase">
+		<classes>
+			<class name="com.youyu.automation.mobile.testcase.AutoTestCase">
+				<methods>
+					<include name="runTestCase"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+</suite>
